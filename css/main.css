@@ -1,0 +1,321 @@
+:root {
+  --beaver: #87635a;
+  --black: #000;
+  --clam-shell: #caafa7;
+  --dawn-pink: #f5eeec;
+  --fantasy: #fcf8f6;
+  --graphite: #260f08;
+  --mountain-meadow: #1ea575;
+  --parlap: #ad8a85;
+  --tia-maria: #c73b0f;
+  --white: #fff;
+
+  --red-hat-ff: "Red Hat Text", sans-serif;
+}
+
+body {
+  background-color: var(--fantasy);
+  padding-bottom: 24px;
+  font-family: var(--red-hat-ff);
+}
+
+.main-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+.pizzas-wrapper {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.pizza-picture {
+  border-radius: 8px;
+  height: 212px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.add-to-cart-btn {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 24px;
+  border: 1px solid var(--beaver);
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 8px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 24px;
+  position: relative;
+  top: -20px;
+  width: fit-content;
+  font-weight: 600;
+}
+
+.pizza-infos {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.pizza-price {
+  color: var(--tia-maria);
+  font-weight: 700;
+}
+
+.basket-aside {
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.basket-aside h2 {
+  color: var(--tia-maria);
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.empty-basket img {
+  max-height: 256px;
+}
+
+.empty-basket p {
+  margin-top: 24px;
+  font-weight: 600;
+  color: var(--beaver);
+}
+
+.basket-products {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.basket-product-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--dawn-pink);
+}
+
+.basket-product-item-name {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.basket-product-details-quantity {
+  color: var(--tia-maria);
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 600;
+}
+
+.basket-product-details-unit-price {
+  color: var(--parlap);
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 400;
+}
+
+.basket-product-details-total-price {
+  color: var(--beaver);
+  font-weight: 600;
+}
+
+.basket-product-remove-icon {
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.total-order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.total-order-price {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.delivery-info {
+  background-color: var(--dawn-pink);
+  padding: 12px 16px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+.delivery-info span {
+  font-weight: 600;
+}
+
+.confirm-order-btn,
+.new-order-btn {
+  background-color: var(--tia-maria);
+  color: var(--white);
+  display: block;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  border-radius: 24px;
+}
+
+.body-full {
+  overflow: hidden;
+}
+
+.order-modal-wrapper {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  content: "";
+}
+
+.order-modal {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 80vh;
+  width: 100vw;
+  background-color: var(--white);
+  content: "";
+  z-index: 10;
+  padding: 40px 24px 24px;
+  overflow: scroll;
+}
+
+.order-modal-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 48px;
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+.order-modal-subtitle {
+  color: var(--beaver);
+  margin-bottom: 24px;
+}
+
+.order-detail {
+  list-style-type: none;
+  padding-left: 0;
+  background-color: var(--fantasy);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.order-detail-product-item {
+  display: grid;
+  grid-template-columns: 48px auto auto auto auto;
+  grid-template-areas:
+    "product-image product-name product-name product-name product-total-price"
+    "product-image product-quantity product-unit-price product-unit-price product-total-price";
+  gap: 8px 12px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--dawn-pink);
+  align-items: center;
+}
+
+.order-detail-product-image {
+  grid-area: product-image;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+
+.order-detail-product-name {
+  grid-area: product-name;
+  font-weight: 700;
+}
+
+.order-detail-product-quantity {
+  grid-area: product-quantity;
+  color: var(--tia-maria);
+  font-weight: 600;
+}
+
+.order-detail-product-unit-price {
+  grid-area: product-unit-price;
+  color: var(--beaver);
+}
+
+.order-detail-product-total-price {
+  grid-area: product-total-price;
+  align-self: center;
+  justify-self: right;
+  font-weight: 600;
+}
+
+.order-detail-total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .pizzas-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .order-modal {
+    left: 50%;
+    bottom: 50%;
+    height: fit-content;
+    width: 90%;
+    transform: translate(-50%, 50%);
+    border-radius: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    padding-top: 24px;
+  }
+
+  .basket-aside {
+    height: max-content;
+    position: sticky;
+    top: 24px;
+  }
+
+  .order-modal {
+    width: 640px;
+  }
+}
+
+.select-items-btn {
+  background-color: var(--tia-maria);
+  color: white;
+  justify-content: space-between;
+  width: 65%;
+  padding: 8px 16px;
+  border-radius: 24px;
+  align-items: center;
+}
+
+.order-modal-wrapper {
+  display: none;
+}
